@@ -19,7 +19,7 @@ This_is_my_string_variable = "Author: Draqun"
 author_info = "Author: Draqun"
 ```
 
-* Using variable type in name wrong!
+* Using variable type in name is wrong!
 
 **Bad**
 ```python
@@ -35,27 +35,30 @@ tmp = "Temporary value"
 
 **Very Bad**
 ```python
-if some_expression:
-    variable = another_variable
-else:
-    variable = "Default Value"
+def func(some_value):
+    if some_example_function(some_value):
+        variable = another_variable
+    else:
+        variable = "Default Value"
 ```
 
 **Not Bad**
 ```python
-variable = another_variable if another_variable: else "Default Value"
+def func(some_value):
+    variable = another_variable if some_example_function(some_value): else "Default Value"
 ```
 
 **Good**
 ```python
-variable = "Default Value"
-if some_expression:
-    variable = another_variable
+def func(some_value):
+    variable = "Default Value"
+    if some_example_function(some_value):
+        variable = another_variable
 ```
 
 ### If statement
 
-Avoid comparision with True and False
+* Avoid comparision with True and False
 
 **Bad**
 ```python
@@ -65,6 +68,16 @@ if is_pony == True:
     ...
 ```
 
+or
+
+```python
+is_hungry = False
+...
+if is_hungry == False:
+    ...
+```
+
+
 **Good**
 ```python
 is_pony = True
@@ -73,7 +86,16 @@ if is_pony:
     ...
 ```
 
-Group expression using parentheses
+or
+
+```python
+is_hungry = False
+...
+if not is_hungry:
+    ...
+```
+
+* Group expression using parentheses
 
 **Bad**
 ```python
@@ -84,38 +106,6 @@ if len(groups) == 9 and cities and len(cities) == 7 and "Warsaw" in cities:
 **Good**
 ```python
 if (len(groups) == 9) and cities and (len(cities) == 7) and ("Warsaw" in cities):
-    pass
-```
-
-### Operators
-
-Use `in` operator to check element is in container
-
-**Good**
-```python
-if "Warsaw" in cities:
-    pass
-```
-
-Use `not in` to ckeck element is not in container
-
-**Good**
-```python
-if "Warsaw" not in cities:
-    pass
-```
-
-Avoid negation of `in` and `not in` operators
-
-**Bad**
-```python
-if not "Warsaw" in cities:
-    pass
-```
-
-**Bad**
-```python
-if not "Warsaw" not in cities:
     pass
 ```
 
@@ -168,6 +158,7 @@ class Horse(object):
             self.name = "Adolfo"
 ```
 or
+
 ```python
 class Horse(object):
     name = "Adolfo"
@@ -184,7 +175,7 @@ class Horse(object):
         self.name = name
 ```
 
-Use single underscore as prefix of protected variable and double underscore as prefix of private variable.
+* Use single underscore as prefix of protected variable and double underscore as prefix of private variable.
 
 ```python
 class Horse(object):
@@ -194,7 +185,7 @@ class Horse(object):
         self.__medal_winner = False # Private variable
 ```
 
-Use this same rule to methods
+* Use this same rule to methods
 
 ```python
 class Dog(Animal):
@@ -273,24 +264,39 @@ tastes = ["ugly", "cherry", "strawberry"]
 cities_population = {"Moscow": "1 MLN", "Warsaw": "1.5 MLN"}
 ```
 
-* Use `in` to check value exists in collection
+### Operators
 
-**Bad**
-```python
-band_to_find = "Rammstein"
-for (band in bands):
-    if (band_to_find == band):
-        ...
-```
+* Use `in` operator to check element is in container
 
 **Good**
 ```python
-band_to_find = "Rammstein"
-if (band_to_find in bands):
-    ...
+if "Warsaw" in cities:
+    pass
 ```
 
-* `in` keyword can be used with dictionary to check element exists in collection
+* Use `not in` to ckeck element is not in container
+
+**Good**
+```python
+if "Warsaw" not in cities:
+    pass
+```
+
+* Avoid negation of `in` and `not in` operators
+
+**Bad**
+```python
+if not "Warsaw" in cities:
+    pass
+```
+
+**Bad**
+```python
+if not "Warsaw" not in cities:
+    pass
+```
+
+* `in` keyword can be used with dictionary to check element exists in collection as a key
 
 ```python
 cities_population = {"Moscow": "1 MLN", "Warsaw": "1.5 MLN"}
@@ -300,7 +306,7 @@ if ("Warsow" in cities_population)
 
 ### Sets
 
-If you want check some value is in a big group use sets instead lists or tuples
+* If you want check some value is in a big group use sets instead lists or tuples
 
 **Bad**
 ```python
@@ -373,7 +379,7 @@ class NotHamsterException(NotAnimalException): pass
 
 ### Exceptions
 
-Use try except block only for part of code which raises exceptions
+* Use try except block only for part of code which raises exceptions
 
 **Bad**
 ```python
@@ -427,5 +433,7 @@ Eg.
  * Use __init__ files for expose public class and for hidding internal modules
  * Do not write code line longer than 80 characters
  * Set last in file empty
+
+* Instead print debuging use pdb module
 
  # If you want more go to https://www.python.org/dev/peps/
