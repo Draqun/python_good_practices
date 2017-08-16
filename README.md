@@ -5,7 +5,7 @@ This document show how to write readable source code in Python.
 ### Variable
 I think you should on start now how to write variable name
 
-* You should now mixing camelCase and snake_case style are bad.
+* You should not mixing camelCase and snake_case style are bad.
 * As you can read in PEP8 use snake_case to name variable
 * Variables should has short names inform what it contains.
 
