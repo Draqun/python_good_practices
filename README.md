@@ -6,9 +6,7 @@ This document show how to write readable source code in Python.
 I think you should on start now how to write variable name
 
 * You should now mixing camelCase and snake_case style are bad.
-* Choose camelCase than snake_case. A lot of people like snake case but this
-  style generate long names. If you want write clean and beautiful code use
-  camelCase.
+* As you can read in PEP8 use snake_case to name variable
 * Variables should has short names inform what it contains.
 
 **Bad**
@@ -18,14 +16,14 @@ This_is_my_string_variable = "Author: Draqun"
 
 **Good**
 ```python
-authorInfo = "Author: Draqun"
+author_info = "Author: Draqun"
 ```
 
 * Using variable type in name wrong!
 
 **Bad**
 ```python
-myString = "Temporary value"
+my_string = "Temporary value"
 ```
 
 **Good**
@@ -37,27 +35,93 @@ tmp = "Temporary value"
 
 **Very Bad**
 ```python
-if someExpression:
-    variable = anotherVariable
+if some_expression:
+    variable = another_variable
 else:
     variable = "Default Value"
 ```
 
 **Not Bad**
 ```python
-variable = anotherVariable if someExpression: else "Default Value"
+variable = another_variable if another_variable: else "Default Value"
 ```
 
 **Good**
 ```python
 variable = "Default Value"
-if someExpression:
-    variable = anotherVariable
+if some_expression:
+    variable = another_variable
 ```
+
+### If statement
+
+Avoid comparision with True and False
+
+**Bad**
+```python
+is_pony = True
+...
+if is_pony == True:
+    ...
+```
+
+**Good**
+```python
+is_pony = True
+...
+if is_pony:
+    ...
+```
+
+Group expression using parentheses
+
+**Bad**
+```python
+if len(groups) == 9 and cities and len(cities) == 7 and "Warsaw" in cities:
+    pass
+```
+
+**Good**
+```python
+if (len(groups) == 9) and cities and (len(cities) == 7) and ("Warsaw" in cities):
+    pass
+```
+
+### Operators
+
+Use `in` operator to check element is in container
+
+**Good**
+```python
+if "Warsaw" in cities:
+    pass
+```
+
+Use `not in` to ckeck element is not in container
+
+**Good**
+```python
+if "Warsaw" not in cities:
+    pass
+```
+
+Avoid negation of `in` and `not in` operators
+
+**Bad**
+```python
+if not "Warsaw" in cities:
+    pass
+```
+
+**Bad**
+```python
+if not "Warsaw" not in cities:
+    pass
+```
+
 ### Class
-* CamelCase is better for classes and methods name than snake_case.
-* Class name should start with capital letter, methods and variables should start
-  with small letter.
+* CamelCase is better for class names than snake_case.
+* Class name should start with capital letter.
 
 **Bad**
 ```python
@@ -69,7 +133,7 @@ class my_little_pony(object):
 **Good**
 ```python
 class MyLittlePony(object):
-    def runPony(self):
+    def run_pony(self):
         ...
 ```
 
@@ -120,18 +184,43 @@ class Horse(object):
         self.name = name
 ```
 
-### Function
-* Use camelCase for function name
+Use single underscore as prefix of protected variable and double underscore as prefix of private variable.
+
+```python
+class Horse(object):
+    def __init__(self):
+        self.name = "Rafaello" # Public variable
+        self._stud = "Warsaw" # Protected variable
+        self.__medal_winner = False # Private variable
+```
+
+Use this same rule to methods
+
+```python
+class Dog(Animal):
+    def bark(self): # Public method
+        ...
+
+    def _owners_name(self): # Protected method
+        ...
+
+    def __vaccination_card_number(self): # Private method
+        ...
+```
+
+
+### Function and methods
+* Use snake_case for function name and methods
 
 **Bad**
 ```python
-def can_write_to_file(file_handler):
+def canWriteToFile(fileHandler):
     ...
 ```
 
 **Good**
 ```python
-def canWriteToFile(fileHandler):
+def can_write_to_file(file_handler):
     ...
 ```
 
@@ -139,37 +228,37 @@ def canWriteToFile(fileHandler):
 
 **Bad**
 ```python
-def pathIsCorrect(path):
+def path_is_correct(path):
     ...
     return path
 
-def createRelativePathForFile(filename, path):
-    path = pathIsCorrect(path)
+def create_relative_path_for_file(filename, path):
+    path = path_is_correct(path)
     ...
 
 ...
-createRelativePathForFile("shadow", "/etc")
+create_relative_path_for_file("shadow", "/etc")
 ```
 
 **Good**
 ```python
-def pathIsCorrect(path):
+def path_is_correct(path):
     ...
     return path
 
-def createRelativePathForFile(filename, *args, **kwargs):
-    path = pathIsCorrect(*args, **kwargs)
+def create_relative_path_for_file(filename, *args, **kwargs):
+    path = path_is_correct(*args, **kwargs)
     ...
 
 ...
-createRelativePathForFile("shadow", "/etc")
+create_relative_path_for_file("shadow", "/etc")
 ```
 
 ### Lists, tuples and dictionaries
 * Use tuples when quantity is constant.
 
 ```python
-possibleNames = ("John", "Joe", "Katherina")
+possible_names = ("John", "Joe", "Katherina")
 ```
 
 * Use list in other cases.
@@ -181,32 +270,52 @@ tastes = ["ugly", "cherry", "strawberry"]
 * Use dictionary when you have key-value pairs
 
 ```python
-citiesPopulation = {"Moscow": "1 MLN", "Warsaw": "1.5 MLN"}
+cities_population = {"Moscow": "1 MLN", "Warsaw": "1.5 MLN"}
 ```
 
 * Use `in` to check value exists in collection
 
 **Bad**
 ```python
-bandToFind = "Rammstein"
+band_to_find = "Rammstein"
 for (band in bands):
-    if (bandToFind == band):
+    if (band_to_find == band):
         ...
 ```
 
 **Good**
 ```python
-bandToFind = "Rammstein"
-if (bandToFind in bands):
+band_to_find = "Rammstein"
+if (band_to_find in bands):
     ...
 ```
 
 * `in` keyword can be used with dictionary to check element exists in collection
 
 ```python
-citiesPopulation = {"Moscow": "1 MLN", "Warsaw": "1.5 MLN"}
-if ("Warsow" in citiesPopulation)
+cities_population = {"Moscow": "1 MLN", "Warsaw": "1.5 MLN"}
+if ("Warsow" in cities_population)
 ...
+```
+
+### Sets
+
+If you want check some value is in a big group use sets instead lists or tuples
+
+**Bad**
+```python
+cities = ["Warsaw", "Berlin", "Moscow", "New York", "London", "Madrit", ...]
+
+if city in cities:
+    pass
+```
+
+**Good**
+```python
+cities = set(["Warsaw", "Berlin", "Moscow", "New York", "London", "Madrit", ...])
+
+if city in cities:
+    pass
 ```
 
 ### Inheritance
@@ -234,22 +343,22 @@ class Animal(object):
 class Animal(object): pass
 
 class Horse(Animal):
-    def getNoise():
+    def get_noise():
         ...
 
 class Duck(Animal):
-    def getNoise():
+    def get_noise():
         ...
 ```
 
 **Good**
 ```python
 class Horse(object):
-    def getNoise():
+    def get_noise():
         ...
 
 class Duck(object):
-    def getNoise():
+    def get_noise():
         ...
 ```
 
@@ -262,6 +371,32 @@ class NotMyLittlePonyToyException(NotToyException): pass
 class NotHamsterException(NotAnimalException): pass
 ```
 
+### Exceptions
+
+Use try except block only for part of code which raises exceptions
+
+**Bad**
+```python
+def send_message(message):
+    ... # some action before try except
+    try:
+        message_striped = message.strip()
+        ... # Some action for sending
+    except AttributeError:
+        ... # Some error handling
+```
+
+**Good**
+```python
+def send_message(message):
+    ... # some action before try except
+    try:
+        message_striped = message.strip()
+    except AttributeError:
+        ... # Some error handling
+    else:
+        ... # Some action for sending
+```
 ### Other
 * Always on top file put info about interpreter and encoding
 
