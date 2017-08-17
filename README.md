@@ -3,11 +3,9 @@
 This document show how to write readable source code in Python.
 
 ### Variable
-I think you should on start now how to write variable name
-
-* You should not mixing camelCase and snake_case style are bad.
-* As you can read in PEP8 use snake_case to name variable
-* Variables should has short names inform what it contains.
+#### You should not mixing camelCase and snake_case styles.
+#### As you can read in PEP8 use snake_case to name variable.
+#### Variables should has short names inform what it contains.
 
 **Bad**
 ```python
@@ -19,7 +17,7 @@ This_is_my_string_variable = "Author: Draqun"
 author_info = "Author: Draqun"
 ```
 
-* Using variable type in name is wrong!
+#### Using variable type in name is wrong!
 
 **Bad**
 ```python
@@ -31,7 +29,7 @@ my_string = "Temporary value"
 tmp = "Temporary value"
 ```
 
-* If variable need always some value use only if statement
+#### If variable need always some value use only if statement
 
 **Very Bad**
 ```python
@@ -58,7 +56,7 @@ def func(some_value):
 
 ### If statement
 
-* Avoid comparision with True and False
+#### Avoid comparision with True and False
 
 **Bad**
 ```python
@@ -95,7 +93,7 @@ if not is_hungry:
     ...
 ```
 
-* Group expression using parentheses
+#### Group expression using parentheses
 
 **Bad**
 ```python
@@ -110,8 +108,8 @@ if (len(groups) == 9) and cities and (len(cities) == 7) and ("Warsaw" in cities)
 ```
 
 ### Class
-* CamelCase is better for class names than snake_case.
-* Class name should start with capital letter.
+#### CamelCase is better for class names than snake_case.
+#### Class name should start with capital letter.
 
 **Bad**
 ```python
@@ -127,7 +125,7 @@ class MyLittlePony(object):
         ...
 ```
 
-* If class is empty create one-line class
+#### If class is empty create one-line class
 
 **Bad**
 ```python
@@ -140,7 +138,7 @@ class Donkey(object):
 class Donkey(object): pass
 ```
 
-* Always set default values of class variables
+#### Always set default values of class variables
 
 **Very bad**
 ```python
@@ -175,7 +173,7 @@ class Horse(object):
         self.name = name
 ```
 
-* Use single underscore as prefix of protected variable and double underscore as prefix of private variable.
+#### Use single underscore as prefix of protected variable and double underscore as prefix of private variable.
 
 ```python
 class Horse(object):
@@ -185,7 +183,7 @@ class Horse(object):
         self.__medal_winner = False # Private variable
 ```
 
-* Use this same rule to methods
+#### Use this same rule to methods
 
 ```python
 class Dog(Animal):
@@ -201,7 +199,7 @@ class Dog(Animal):
 
 
 ### Function and methods
-* Use snake_case for function name and methods
+#### Use snake_case for function name and methods
 
 **Bad**
 ```python
@@ -215,7 +213,7 @@ def can_write_to_file(file_handler):
     ...
 ```
 
-* Use `*args` and `**kwargs` to pass arguments for nested function
+#### Use `*args` and `**kwargs` to pass arguments for nested function
 
 **Bad**
 ```python
@@ -246,19 +244,19 @@ create_relative_path_for_file("shadow", "/etc")
 ```
 
 ### Lists, tuples and dictionaries
-* Use tuples when quantity is constant.
+#### Use tuples when quantity is constant.
 
 ```python
 possible_names = ("John", "Joe", "Katherina")
 ```
 
-* Use list in other cases.
+#### Use list in other cases.
 
 ```python
 tastes = ["ugly", "cherry", "strawberry"]
 ```
 
-* Use dictionary when you have key-value pairs
+#### Use dictionary when you have key-value pairs
 
 ```python
 cities_population = {"Moscow": "1 MLN", "Warsaw": "1.5 MLN"}
@@ -266,7 +264,7 @@ cities_population = {"Moscow": "1 MLN", "Warsaw": "1.5 MLN"}
 
 ### Operators
 
-* Use `in` operator to check element is in container
+#### Use `in` operator to check element is in container
 
 **Good**
 ```python
@@ -274,7 +272,7 @@ if "Warsaw" in cities:
     pass
 ```
 
-* Use `not in` to ckeck element is not in container
+#### Use `not in` to ckeck element is not in container
 
 **Good**
 ```python
@@ -282,7 +280,7 @@ if "Warsaw" not in cities:
     pass
 ```
 
-* Avoid negation of `in` and `not in` operators
+#### Avoid negation of `in` and `not in` operators
 
 **Bad**
 ```python
@@ -296,7 +294,7 @@ if not "Warsaw" not in cities:
     pass
 ```
 
-* `in` keyword can be used with dictionary to check element exists in collection as a key
+#### `in` keyword can be used with dictionary to check element exists in collection as a key
 
 ```python
 cities_population = {"Moscow": "1 MLN", "Warsaw": "1.5 MLN"}
@@ -306,7 +304,7 @@ if ("Warsow" in cities_population)
 
 ### Sets
 
-* If you want check some value is in a big group use sets instead lists or tuples
+#### If you want check some value is in a big group use sets instead lists or tuples
 
 **Bad**
 ```python
@@ -326,7 +324,7 @@ if city in cities:
 
 ### Inheritance
 
-* Always inherit from `object` if you do not have other class.
+#### Always inherit from `object` if you do not have other class.
 
 **Bad**
 ```python
@@ -340,7 +338,7 @@ class Animal(object):
     ...
 ```
 
-* Use duck typing if class are not exceptions
+#### Use duck typing if class are not exceptions
 
 ![Duck typing idea](https://cdn.meme.am/instances/67471500.jpg)
 
@@ -368,7 +366,7 @@ class Duck(object):
         ...
 ```
 
-* Use inheritance when you create exceptions tree
+#### Use inheritance when you create exceptions tree
 
 ```python
 class NotAnimalException(BaseException): pass
@@ -379,7 +377,7 @@ class NotHamsterException(NotAnimalException): pass
 
 ### Exceptions
 
-* Use try except block only for part of code which raises exceptions
+#### Use try except block only for part of code which raises exceptions
 
 **Bad**
 ```python
@@ -404,7 +402,7 @@ def send_message(message):
         ... # Some action for sending
 ```
 ### Other
-* Always on top file put info about interpreter and encoding
+#### Always on top file put info about interpreter and encoding
 
 For Python 2 and emacs encoding
 ```python
@@ -418,8 +416,8 @@ or Python 3 and vim encoding
 ```
 
 
-* Always write file with encoding UTF-8
-* Always create file requirements.txt and put there names and version library
+#### Always write file with encoding UTF-8
+#### Always create file requirements.txt and put there names and version library
   used in project
 
 Eg.
@@ -428,12 +426,12 @@ Eg.
  wheel==0.26.0
  ```
 
- * Create every class in own file
- * Create modules for group of class
- * Use __init__ files for expose public class and for hidding internal modules
- * Do not write code line longer than 80 characters
- * Set last in file empty
+#### Create every class in own file
+#### Create modules for group of class
+#### Use __init__ files for expose public class and for hidding internal modules
+#### Do not write code line longer than 80 characters
+#### Set last in file empty
 
-* Instead print debuging use pdb module
+#### Instead print debuging use pdb module
 
  # If you want more go to https://www.python.org/dev/peps/
