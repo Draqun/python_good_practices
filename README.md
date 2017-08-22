@@ -3,9 +3,9 @@
 This document show how to write readable source code in Python.
 
 ### Variable
-#### You should not mixing camelCase and snake_case styles.
-#### As you can read in PEP8 use snake_case to name variable.
-#### Variables should has short names inform what it contains.
+#### You should not mix camelCase and snake_case styles.
+#### Use snake_case for name variable as suggested in PEP8
+#### Variables should have short names that inform what they contains.
 
 **Bad**
 ```python
@@ -56,7 +56,7 @@ def func(some_value):
 
 ### If statement
 
-#### Avoid comparision with True and False
+#### Avoid comparison with True and False
 
 **Bad**
 ```python
@@ -178,12 +178,12 @@ class Horse(object):
 ```python
 class Horse(object):
     def __init__(self):
-        self.name = "Rafaello" # Public variable
-        self._stud = "Warsaw" # Protected variable
-        self.__medal_winner = False # Private variable
+        self.name = "Rafaello"  # Public variable
+        self._stud = "Warsaw"  # Protected variable
+        self.__medal_winner = False  # Private variable
 ```
 
-#### Use this same rule to methods
+#### Use the same rule to methods
 
 ```python
 class Dog(Animal):
@@ -199,7 +199,7 @@ class Dog(Animal):
 
 
 ### Function and methods
-#### Use snake_case for function name and methods
+#### Use snake_case for function name and methods.
 
 **Bad**
 ```python
@@ -213,7 +213,7 @@ def can_write_to_file(file_handler):
     ...
 ```
 
-#### Use `*args` and `**kwargs` to pass arguments for nested function
+#### Use `*args` and `**kwargs` to pass arguments for nested (wrapped) function
 
 **Bad**
 ```python
@@ -320,22 +320,6 @@ cities = set(["Warsaw", "Berlin", "Moscow", "New York", "London", "Madrit", ...]
 
 if city in cities:
     pass
-```
-
-### Inheritance
-
-#### Always inherit from `object` if you do not have other class.
-
-**Bad**
-```python
-class Animal():
-    ...
-```
-
-**Good**
-```python
-class Animal(object):
-    ...
 ```
 
 #### Use duck typing if class are not exceptions
