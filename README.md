@@ -113,14 +113,14 @@ if (len(groups) == 9) and cities and (len(cities) == 7) and ("Warsaw" in cities)
 
 **Bad**
 ```python
-class my_little_pony(object):
+class my_little_pony:
     def run_pony(self):
         ...
 ```
 
 **Good**
 ```python
-class MyLittlePony(object):
+class MyLittlePony:
     def run_pony(self):
         ...
 ```
@@ -129,26 +129,26 @@ class MyLittlePony(object):
 
 **Bad**
 ```python
-class Donkey(object):
+class Donkey:
     pass
 ```
 
 **Good**
 ```python
-class Donkey(object): pass
+class Donkey: pass
 ```
 
 #### Always set default values of class variables
 
 **Very bad**
 ```python
-class Horse(object):
+class Horse:
     name = "Adolfo"
 ```
 
 **Bad**
 ```python
-class Horse(object):
+class Horse:
     def __init__(self, name):
         if (name):
             self.name = name
@@ -158,7 +158,7 @@ class Horse(object):
 or
 
 ```python
-class Horse(object):
+class Horse:
     name = "Adolfo"
 
     def __init__(self, name):
@@ -168,7 +168,7 @@ class Horse(object):
 
 **Good**
 ```python
-class Horse(object):
+class Horse:
     def __init__(self, name="Adolfo"):
         self.name = name
 ```
@@ -176,7 +176,7 @@ class Horse(object):
 #### Use single underscore as prefix of protected variable and double underscore as prefix of private variable.
 
 ```python
-class Horse(object):
+class Horse:
     def __init__(self):
         self.name = "Rafaello"  # Public variable
         self._stud = "Warsaw"  # Protected variable
@@ -328,7 +328,7 @@ if city in cities:
 
 **Bad**
 ```python
-class Animal(object): pass
+class Animal: pass
 
 class Horse(Animal):
     def get_noise():
@@ -341,11 +341,11 @@ class Duck(Animal):
 
 **Good**
 ```python
-class Horse(object):
+class Horse:
     def get_noise():
         ...
 
-class Duck(object):
+class Duck:
     def get_noise():
         ...
 ```
