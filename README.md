@@ -2,6 +2,14 @@
 
 This document show how to write readable source code in Python.
 
+### Shebang
+#### Always start main python file with correct shebang
+
+```python
+#!/usr/bin/env python3
+```
+
+
 ### Variable
 #### You should not mix camelCase and snake_case styles.
 #### Use snake_case for name variable as suggested in PEP8
