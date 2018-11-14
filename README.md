@@ -9,6 +9,24 @@ This document show how to write readable source code in Python.
 #!/usr/bin/env python3
 ```
 
+### Module level dunders
+#### Always write module level dunders
+#### Before dunders use only imports from __future__
+#### Other import should be after dunders
+```python
+#!/usr/bin/env python3
+
+ from __future__ import * # Before dunders use only imports from future
+ 
+ __all__ = ["a", "b"] # All data which can be imported from module
+__version__ = '1.0'
+__author__ = 'John Smith'
+__email__ = 'john.smith@example.com'
+__copyright___ = "Copyright (c) 2018 John Smith"
+
+import sys # Other imports
+```
+
 
 ### Variable
 #### You should not mix camelCase and snake_case styles.
