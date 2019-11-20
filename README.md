@@ -1,4 +1,4 @@
-# Python good practice
+# Python good practices
 
 This document show how to write readable source code in Python.
 
@@ -154,6 +154,7 @@ class MyLittlePony:
 #### If class is empty create one-line class
 
 **Bad**
+If there is no docstring
 ```python
 class Donkey:
     pass
@@ -162,6 +163,12 @@ class Donkey:
 **Good**
 ```python
 class Donkey: pass
+```
+or
+```python
+class Donkey:
+    """This is Donkey which eat grass"""
+    pass
 ```
 
 #### Always set default values of class variables
@@ -324,8 +331,8 @@ if not "Warsaw" not in cities:
 
 ```python
 cities_population = {"Moscow": "1 MLN", "Warsaw": "1.5 MLN"}
-if ("Warsow" in cities_population)
-...
+if "Warsow" in cities_population:
+    pass
 ```
 
 ### Sets
@@ -421,8 +428,7 @@ For Python 2 and emacs encoding
 ```
 or Python 3 and vim encoding
 ```python
-#~/usr/bin/env python3
-# vim: set fileencoding=UTF-8 :
+#!/usr/bin/env python3
 ```
 
 
