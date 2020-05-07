@@ -31,6 +31,7 @@ import sys # Other imports
 ### Variable
 #### You should not mix camelCase and snake_case styles.
 #### Use snake_case for name variable as suggested in PEP8
+#### Variable names should be written in lowercase.
 #### Variables should have short names that inform what they contains.
 #### Write code in English language and avoid UTF8 chars.
 
