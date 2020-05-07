@@ -184,6 +184,7 @@ class Donkey:
 
 #### The names of the classes should be written in singular if they are not containers.
 If you want add horses to your application create class for single entity.
+
 **Bad**
 ```python
 class Horses:
@@ -199,6 +200,7 @@ class Horse:
 ```
 
 If you want create container class use plural names
+
 **Bad**
 ```python
 class HorsesConatiner:
