@@ -92,6 +92,19 @@ def func(some_value):
         variable = another_variable
 ```
 
+#### IF you create variable and it contains one object do not use plural version in names
+
+**Bad**
+```python
+donuts = Dessert()
+```
+
+**Good**
+```python
+donut = Dessert()
+```
+
+
 ### If statement
 
 #### Avoid comparison with True and False
