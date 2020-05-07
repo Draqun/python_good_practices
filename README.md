@@ -32,6 +32,17 @@ import sys # Other imports
 #### You should not mix camelCase and snake_case styles.
 #### Use snake_case for name variable as suggested in PEP8
 #### Variables should have short names that inform what they contains.
+#### Write code in English language and avoid UTF8 chars.
+
+**Very very bad**
+```python
+My_String = "Temporary value"
+```
+
+**Very bad**
+```python
+MyString = "Temporary value"
+```
 
 **Bad**
 ```python
@@ -168,6 +179,37 @@ or
 ```python
 class Donkey:
     """This is Donkey which eat grass"""
+    pass
+```
+
+#### The names of the classes should be written in singular if they are not containers.
+If you want add horses to your application create class for single entity.
+**Bad**
+```python
+class Horses:
+  """ This is horse class """
+    pass
+```
+
+**Good**
+```python
+class Horse:
+  """ This is horse class """
+    pass
+```
+
+If you want create container class use plural names
+**Bad**
+```python
+class HorsesConatiner:
+    """ Horses container """
+    pass
+```
+
+**Good**
+```python
+class Horses:
+    """ Horses container """
     pass
 ```
 
