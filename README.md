@@ -162,6 +162,13 @@ if (len(groups) == 9) and cities and (len(cities) == 7) and ("Warsaw" in cities)
 #### CamelCase is better for class names than snake_case.
 #### Class name should start with capital letter.
 
+**Very Bad**
+```python
+class My_little_Pony:
+    def run_pony(self):
+        ...
+```
+
 **Bad**
 ```python
 class my_little_pony:
