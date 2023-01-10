@@ -451,8 +451,8 @@ class Duck:
 #### Use inheritance when you create exceptions tree
 
 ```python
-class NotAnimalException(BaseException): pass
-class NotToyException(BaseException): pass
+class NotAnimalException(Exception): pass
+class NotToyException(Exception): pass
 class NotMyLittlePonyToyException(NotToyException): pass
 class NotHamsterException(NotAnimalException): pass
 ```
