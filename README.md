@@ -503,6 +503,8 @@ or Python 3 and vim encoding
 
 Eg.
  ```
+ mypy==0.961
+ pylint==2.15.10
  Django==1.8.2
  wheel==0.26.0
  ```
@@ -510,9 +512,10 @@ Eg.
 #### Create every class in own file
 #### Create modules for group of class
 #### Use __init__ files for expose public class and for hidding internal modules
-#### Do not write code line longer than 80 characters
+#### Do not write code line longer than 100(or 120 for wide displays) characters
 #### Set last in file empty
-
 #### Instead print debuging use pdb module
+#### Instead print use logging module for logs
+#### Use pylint and/or mypy for static analysis
 
  # If you want more go to https://www.python.org/dev/peps/
